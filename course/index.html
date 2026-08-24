@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A six-part, hands-on course for building a local AI agent from scratch with Python."
+    />
+    <meta name="theme-color" content="#07111f" />
+    <title>AI Agent From Scratch — Course Console</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#course-track">Skip to lessons</a>
+
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="orb orb-one" aria-hidden="true"></div>
+    <div class="orb orb-two" aria-hidden="true"></div>
+
+    <header class="site-header shell">
+      <a class="brand" href="#top" aria-label="Agent Lab course home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>AGENT<span class="brand-slash">//</span>LAB</span>
+      </a>
+      <nav class="header-nav" aria-label="Course navigation">
+        <a href="#course-track">Lessons</a>
+        <a href="#simulator">Simulator</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+      <div class="header-progress" aria-label="Course progress">
+        <span id="header-progress-label">0 / 6</span>
+        <span class="header-progress-track" aria-hidden="true">
+          <span id="header-progress-bar"></span>
+        </span>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> Local-first Python course</p>
+          <h1 id="hero-title">Build an AI agent.<br /><span>Understand every step.</span></h1>
+          <p class="hero-lede">
+            Start with one model call. Add tools, a loop, error recovery, and safe limits—one working
+            piece at a time.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#course-track">Start Part 1 <span aria-hidden="true">↘</span></a>
+            <button class="button button-quiet" id="continue-button" type="button">Continue course</button>
+          </div>
+          <dl class="hero-stats" aria-label="Course overview">
+            <div><dt>6</dt><dd>Parts</dd></div>
+            <div><dt>1</dt><dd>Agent</dd></div>
+            <div><dt>0</dt><dd>Frameworks</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-system" aria-label="Agent system overview">
+          <div class="system-label">SYSTEM MAP <span>LIVE</span></div>
+          <div class="system-node node-model">
+            <span class="node-index">01</span>
+            <strong>LANGUAGE MODEL</strong>
+            <small>chooses the next action</small>
+          </div>
+          <div class="system-flow flow-one" aria-hidden="true"><span></span><b>request</b></div>
+          <div class="system-node node-python">
+            <span class="node-index">02</span>
+            <strong>PYTHON</strong>
+            <small>runs the approved tool</small>
+          </div>
+          <div class="system-flow flow-two" aria-hidden="true"><span></span><b>result</b></div>
+          <div class="system-node node-answer">
+            <span class="node-index">03</span>
+            <strong>FINAL ANSWER</strong>
+            <small>uses real information</small>
+          </div>
+          <div class="system-scan" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="course-section shell" id="course-track" aria-labelledby="track-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Course track</p>
+            <h2 id="track-title">Six connected parts</h2>
+          </div>
+          <div class="course-progress-panel">
+            <div class="progress-readout">
+              <span>YOUR PROGRESS</span>
+              <strong id="progress-percent">0%</strong>
+            </div>
+            <div
+              class="progress-track"
+              role="progressbar"
+              aria-label="Course completion"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+              id="course-progress"
+            >
+              <span id="course-progress-bar"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-grid">
+          <article class="lesson-card" data-lesson="1">
+            <div class="lesson-rail"><span>PART</span><strong>01</strong></div>
+            <div class="lesson-body">
+              <div class="lesson-meta"><span>FOUNDATION</span><span>~12 MIN</span></div>
+              <h3>Connect the model</h3>
+              <p>Run a language model locally, connect it to Python, and send the first message.</p>
+              <button class="outcome-toggle" type="button" aria-expanded="false" aria-controls="outcomes-1">
+                What you’ll build <span aria-hidden="true">+</span>
+              </button>
+              <div class="lesson-outcomes" id="outcomes-1" hidden>
+                <ul>
+                  <li>A local Ollama model</li>
+                  <li>An OpenAI-compatible Python client</li>
+                  <li>Your first model response</li>
+                </ul>
+              </div>
+              <div class="lesson-actions">
+                <a href="../parts/01-connect-model/README.md" data-repo-path="parts/01-connect-model/README.md">Open lesson <span aria-hidden="true">→</span></a>
+                <button class="complete-button" type="button" aria-pressed="false">
+                  <span class="check-box" aria-hidden="true"></span><span class="complete-label">Mark complete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson-card" data-lesson="2">
+            <div class="lesson-rail"><span>PART</span><strong>02</strong></div>
+            <div class="lesson-body">
+              <div class="lesson-meta"><span>TOOLS</span><span>~15 MIN</span></div>
+              <h3>Give it one tool</h3>
+              <p>Let the model request a Python function and return the real result to the conversation.</p>
+              <button class="outcome-toggle" type="button" aria-expanded="false" aria-controls="outcomes-2">
+                What you’ll build <span aria-hidden="true">+</span>
+              </button>
+              <div class="lesson-outcomes" id="outcomes-2" hidden>
+                <ul>
+                  <li>A current-time Python function</li>
+                  <li>A tool definition the model can read</li>
+                  <li>A complete tool-call exchange</li>
+                </ul>
+              </div>
+              <div class="lesson-actions">
+                <a href="../parts/02-first-tool/README.md" data-repo-path="parts/02-first-tool/README.md">Open lesson <span aria-hidden="true">→</span></a>
+                <button class="complete-button" type="button" aria-pressed="false">
+                  <span class="check-box" aria-hidden="true"></span><span class="complete-label">Mark complete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson-card" data-lesson="3">
+            <div class="lesson-rail"><span>PART</span><strong>03</strong></div>
+            <div class="lesson-body">
+              <div class="lesson-meta"><span>CONTROL FLOW</span><span>~16 MIN</span></div>
+              <h3>Build the agent loop</h3>
+              <p>Keep the conversation moving until the model has enough information to answer.</p>
+              <button class="outcome-toggle" type="button" aria-expanded="false" aria-controls="outcomes-3">
+                What you’ll build <span aria-hidden="true">+</span>
+              </button>
+              <div class="lesson-outcomes" id="outcomes-3" hidden>
+                <ul>
+                  <li>A repeatable decision loop</li>
+                  <li>Message-history updates</li>
+                  <li>A clear stopping condition</li>
+                </ul>
+              </div>
+              <div class="lesson-actions">
+                <a href="../parts/03-agent-loop/README.md" data-repo-path="parts/03-agent-loop/README.md">Open lesson <span aria-hidden="true">→</span></a>
+                <button class="complete-button" type="button" aria-pressed="false">
+                  <span class="check-box" aria-hidden="true"></span><span class="complete-label">Mark complete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson-card" data-lesson="4">
+            <div class="lesson-rail"><span>PART</span><strong>04</strong></div>
+            <div class="lesson-body">
+              <div class="lesson-meta"><span>ROUTING</span><span>~18 MIN</span></div>
+              <h3>Add multiple tools</h3>
+              <p>Give the agent choices and route each request to the correct Python function.</p>
+              <button class="outcome-toggle" type="button" aria-expanded="false" aria-controls="outcomes-4">
+                What you’ll build <span aria-hidden="true">+</span>
+              </button>
+              <div class="lesson-outcomes" id="outcomes-4" hidden>
+                <ul>
+                  <li>A small tool registry</li>
+                  <li>Argument parsing and dispatch</li>
+                  <li>A multi-step agent task</li>
+                </ul>
+              </div>
+              <div class="lesson-actions">
+                <a href="../parts/04-multiple-tools/README.md" data-repo-path="parts/04-multiple-tools/README.md">Open lesson <span aria-hidden="true">→</span></a>
+                <button class="complete-button" type="button" aria-pressed="false">
+                  <span class="check-box" aria-hidden="true"></span><span class="complete-label">Mark complete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson-card" data-lesson="5">
+            <div class="lesson-rail"><span>PART</span><strong>05</strong></div>
+            <div class="lesson-body">
+              <div class="lesson-meta"><span>RELIABILITY</span><span>~17 MIN</span></div>
+              <h3>Recover from errors</h3>
+              <p>Return useful failures to the model so the agent can correct its plan and try again.</p>
+              <button class="outcome-toggle" type="button" aria-expanded="false" aria-controls="outcomes-5">
+                What you’ll build <span aria-hidden="true">+</span>
+              </button>
+              <div class="lesson-outcomes" id="outcomes-5" hidden>
+                <ul>
+                  <li>Safe exception handling</li>
+                  <li>Useful error messages</li>
+                  <li>Retry and loop limits</li>
+                </ul>
+              </div>
+              <div class="lesson-actions">
+                <a href="../parts/05-error-recovery/README.md" data-repo-path="parts/05-error-recovery/README.md">Open lesson <span aria-hidden="true">→</span></a>
+                <button class="complete-button" type="button" aria-pressed="false">
+                  <span class="check-box" aria-hidden="true"></span><span class="complete-label">Mark complete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="lesson-card" data-lesson="6">
+            <div class="lesson-rail"><span>PART</span><strong>06</strong></div>
+            <div class="lesson-body">
+              <div class="lesson-meta"><span>SAFETY</span><span>~18 MIN</span></div>
+              <h3>Add permissions & limits</h3>
+              <p>Control what the agent may do, validate inputs, and stop unsafe or endless actions.</p>
+              <button class="outcome-toggle" type="button" aria-expanded="false" aria-controls="outcomes-6">
+                What you’ll build <span aria-hidden="true">+</span>
+              </button>
+              <div class="lesson-outcomes" id="outcomes-6" hidden>
+                <ul>
+                  <li>An explicit tool allowlist</li>
+                  <li>Argument validation</li>
+                  <li>Confirmation and hard limits</li>
+                </ul>
+              </div>
+              <div class="lesson-actions">
+                <a href="../parts/06-permissions-and-limits/README.md" data-repo-path="parts/06-permissions-and-limits/README.md">Open lesson <span aria-hidden="true">→</span></a>
+                <button class="complete-button" type="button" aria-pressed="false">
+                  <span class="check-box" aria-hidden="true"></span><span class="complete-label">Mark complete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace-section shell" aria-label="Course workspace">
+        <div class="setup-panel geometric-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Quick setup</p>
+              <h2>Get the model running</h2>
+            </div>
+            <span class="panel-index">A.01</span>
+          </div>
+          <div class="command-list">
+            <div class="command-row">
+              <div><span>01</span><code>ollama pull gpt-oss:20b</code></div>
+              <button class="copy-button" type="button" data-copy="ollama pull gpt-oss:20b">Copy</button>
+            </div>
+            <div class="command-row">
+              <div><span>02</span><code>python -m venv .venv</code></div>
+              <button class="copy-button" type="button" data-copy="python -m venv .venv">Copy</button>
+            </div>
+            <div class="command-row">
+              <div><span>03</span><code>python -m pip install -r requirements.txt</code></div>
+              <button class="copy-button" type="button" data-copy="python -m pip install -r requirements.txt">Copy</button>
+            </div>
+            <div class="command-row">
+              <div><span>04</span><code>python parts/01-connect-model/starter/agent.py</code></div>
+              <button class="copy-button" type="button" data-copy="python parts/01-connect-model/starter/agent.py">Copy</button>
+            </div>
+          </div>
+          <p class="setup-note">
+            Activate <code>.venv</code> before Step 03. Use the command for your system in
+            <a href="../START_HERE.md" data-repo-path="START_HERE.md">START_HERE.md</a>.
+          </p>
+          <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="mental-model geometric-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Keep this in mind</p>
+              <h2>Who does what?</h2>
+            </div>
+            <span class="panel-index">A.02</span>
+          </div>
+          <div class="role-comparison">
+            <div>
+              <span class="role-tag model-tag">MODEL</span>
+              <strong>Decides</strong>
+              <p>Chooses a tool and uses the returned information.</p>
+            </div>
+            <div class="role-divider" aria-hidden="true"><span>↔</span></div>
+            <div>
+              <span class="role-tag python-tag">PYTHON</span>
+              <strong>Acts</strong>
+              <p>Validates the request, runs code, and sends back the result.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="simulator-section shell" id="simulator" aria-labelledby="simulator-title">
+        <div class="section-heading simulator-heading">
+          <div>
+            <p class="eyebrow">Interactive lab</p>
+            <h2 id="simulator-title">Replay the Part 2 time trace</h2>
+          </div>
+          <p>This fixed demo shows exactly how the current-time tool moves through the system.</p>
+        </div>
+
+        <div class="simulator-shell">
+          <form class="simulator-controls" id="simulator-form">
+            <label for="simulator-prompt">PART 2 QUESTION</label>
+            <div class="prompt-input-row">
+              <input
+                id="simulator-prompt"
+                name="prompt"
+                type="text"
+                value="What time is it right now?"
+                readonly
+                aria-readonly="true"
+              />
+              <button class="button button-primary" type="submit" id="run-loop-button">Run fixed trace</button>
+            </div>
+            <p>The trace is a browser simulation of the single-tool exchange built in Part 2.</p>
+          </form>
+
+          <div class="loop-stage" aria-label="Agent loop stages">
+            <div class="stage-card" data-stage="1">
+              <span class="stage-number">01</span>
+              <div><small>USER</small><strong>Prompt</strong><p id="stage-prompt">Waiting for input</p></div>
+              <span class="stage-state">READY</span>
+            </div>
+            <div class="stage-connector" aria-hidden="true"><span></span></div>
+            <div class="stage-card" data-stage="2">
+              <span class="stage-number">02</span>
+              <div><small>MODEL</small><strong>Tool request</strong><p>get_current_time()</p></div>
+              <span class="stage-state">WAITING</span>
+            </div>
+            <div class="stage-connector" aria-hidden="true"><span></span></div>
+            <div class="stage-card" data-stage="3">
+              <span class="stage-number">03</span>
+              <div><small>PYTHON</small><strong>Tool runs</strong><p>Reads the computer clock</p></div>
+              <span class="stage-state">WAITING</span>
+            </div>
+            <div class="stage-connector" aria-hidden="true"><span></span></div>
+            <div class="stage-card" data-stage="4">
+              <span class="stage-number">04</span>
+              <div><small>TOOL</small><strong>Result</strong><p id="stage-result">--:--:--</p></div>
+              <span class="stage-state">WAITING</span>
+            </div>
+            <div class="stage-connector" aria-hidden="true"><span></span></div>
+            <div class="stage-card" data-stage="5">
+              <span class="stage-number">05</span>
+              <div><small>MODEL</small><strong>Final answer</strong><p id="stage-answer">Waiting for result</p></div>
+              <span class="stage-state">WAITING</span>
+            </div>
+          </div>
+
+          <div class="simulator-terminal" aria-live="polite" aria-atomic="true">
+            <div class="terminal-top"><span>AGENT_TRACE.LOG</span><span id="terminal-status">IDLE</span></div>
+            <pre id="terminal-output"><span class="terminal-muted">// Press “Run fixed trace” to replay the exchange.</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="quiz-section shell" id="quiz" aria-labelledby="quiz-title">
+        <div class="section-heading quiz-heading">
+          <div>
+            <p class="eyebrow">Knowledge check</p>
+            <h2 id="quiz-title">Can you trace the complete agent?</h2>
+          </div>
+          <div class="quiz-score" aria-live="polite"><span>SCORE</span><strong id="quiz-score">0 / 6</strong></div>
+        </div>
+
+        <form id="quiz-form" class="quiz-grid">
+          <fieldset class="quiz-card" data-question="1" data-answer="local">
+            <legend><span>PART 01</span> What does <code>localhost</code> tell the client?</legend>
+            <label><input type="radio" name="q1" value="cloud" /><span>Use a hosted cloud model</span></label>
+            <label><input type="radio" name="q1" value="local" /><span>Send requests to a service on this computer</span></label>
+            <label><input type="radio" name="q1" value="save" /><span>Save every message to a local file</span></label>
+            <p class="quiz-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <fieldset class="quiz-card" data-question="2" data-answer="python">
+            <legend><span>PART 02</span> Who actually executes a requested tool?</legend>
+            <label><input type="radio" name="q2" value="model" /><span>The language model</span></label>
+            <label><input type="radio" name="q2" value="python" /><span>Python, after recognizing the request</span></label>
+            <label><input type="radio" name="q2" value="user" /><span>The user types its result manually</span></label>
+            <p class="quiz-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <fieldset class="quiz-card" data-question="3" data-answer="final">
+            <legend><span>PART 03</span> When should the agent loop stop normally?</legend>
+            <label><input type="radio" name="q3" value="first" /><span>After the first model response</span></label>
+            <label><input type="radio" name="q3" value="final" /><span>When the model returns a final answer instead of another tool call</span></label>
+            <label><input type="radio" name="q3" value="forever" /><span>Only when the user closes Python</span></label>
+            <p class="quiz-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <fieldset class="quiz-card" data-question="4" data-answer="registry">
+            <legend><span>PART 04</span> How should Python choose among several tools?</legend>
+            <label><input type="radio" name="q4" value="all" /><span>Run every tool for every request</span></label>
+            <label><input type="radio" name="q4" value="guess" /><span>Guess from the user’s original wording</span></label>
+            <label><input type="radio" name="q4" value="registry" /><span>Match the requested name to an approved tool registry</span></label>
+            <p class="quiz-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <fieldset class="quiz-card" data-question="5" data-answer="structured">
+            <legend><span>PART 05</span> What should happen when a tool fails?</legend>
+            <label><input type="radio" name="q5" value="hide" /><span>Hide the failure and return an empty result</span></label>
+            <label><input type="radio" name="q5" value="structured" /><span>Return a structured error so the model can revise its next step</span></label>
+            <label><input type="radio" name="q5" value="crash" /><span>Always crash the entire program</span></label>
+            <p class="quiz-feedback" aria-live="polite"></p>
+          </fieldset>
+
+          <fieldset class="quiz-card" data-question="6" data-answer="both">
+            <legend><span>PART 06</span> Before a tool writes a file, what must Python enforce?</legend>
+            <label><input type="radio" name="q6" value="model" /><span>Only that the model sounds confident</span></label>
+            <label><input type="radio" name="q6" value="path" /><span>Only that the filename ends in <code>.txt</code></span></label>
+            <label><input type="radio" name="q6" value="both" /><span>Explicit write approval and a path inside the allowed workspace</span></label>
+            <p class="quiz-feedback" aria-live="polite"></p>
+          </fieldset>
+        </form>
+        <div class="quiz-footer">
+          <p id="quiz-summary">Choose an answer to get instant feedback.</p>
+          <button class="button button-quiet" id="reset-quiz" type="button">Reset quiz</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <div><span class="brand-mark small" aria-hidden="true"><span></span></span><strong>AGENT//LAB</strong></div>
+      <p>Six parts. One understandable system.</p>
+      <button id="reset-progress" type="button">Reset course progress</button>
+    </footer>
+  </body>
+</html>
